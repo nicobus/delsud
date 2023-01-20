@@ -1,13 +1,19 @@
 import React from 'react';
 import Header from './Header';
+import Plane from './Plane';
+import Footer from './Footer';
+import Contact from './Contact';
 
 let Home = () => {
   
   return (
-    <>
-      <Header/>
+      <>
+        <Header />
+        <Plane />
+        <Contact />
+        <Footer />
+      </>
       
-    </>
   )
 }
 
