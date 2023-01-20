@@ -1,8 +1,8 @@
 import React from 'react';
 import { useFormik } from 'formik';
-import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import axios from 'axios';
 
 const Contact = () => {
   // Note that we have to initialize ALL of fields with values. These
@@ -14,10 +14,17 @@ const Contact = () => {
       name: '',
       email: '',
       phone: '',
-      message: '',
     },
+    
     onSubmit: values => {
       alert(JSON.stringify(values, null, 2));
+      axios({
+                method: "post",
+                url: "http://127.0.0.1:8000/api/contacts",
+                data: { name: values.name,
+                email: values.email,
+                phone: values.phone}
+              })
     },
   });
   return (
